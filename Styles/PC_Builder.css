@@ -32,6 +32,23 @@
     Feel free to customize the colors, spacing, and other utilities to better fit the project's needs. Let me know if you have any questions!
 */
 
+/* CSS Variables for Consistent Theming */
+:root {
+    --color-white: #ffffff;
+    --color-gray-100: #f7fafc;
+    --color-gray-300: #a0aec0;
+    --color-gray-400: #cbd5e0;
+    --color-gray-800: #2d3748;
+    --color-blue-600: #3182ce;
+    --color-blue-700: #2b6cb0;
+    --color-green-600: #38a169;
+    --color-green-700: #2f855a;
+    --color-modal-bg: #ffffff;
+    --color-modal-border: #888;
+    --color-close-hover: #2d3748;
+    --transition-speed: 0.3s;
+}
+
 .container {
     max-width: 1200px;
     margin-left: auto;
@@ -48,21 +65,21 @@
 
 /* Fixed Color Definitions for Proper Contrast */
 .text-white {
-    color: #ffffff;
+    color: var(--color-white);
 }
 
-.text-gray-100 { color: #f7fafc; }
-.text-gray-300 { color: #a0aec0; }
-.text-gray-400 { color: #cbd5e0; }
-.text-gray-800 { color: #2d3748; }
+.text-gray-100 { color: var(--color-gray-100); }
+.text-gray-300 { color: var(--color-gray-300); }
+.text-gray-400 { color: var(--color-gray-400); }
+.text-gray-800 { color: var(--color-gray-800); }
 
-.bg-gray-100 { background-color: #f7fafc; }
+.bg-gray-100 { background-color: var(--color-gray-100); }
 .bg-gray-200 { background-color: #edf2f7; }
-.bg-gray-800 { background-color: #2d3748; }
-.bg-blue-600 { background-color: #3182ce; }
-.bg-blue-700 { background-color: #2b6cb0; }
-.bg-green-600 { background-color: #38a169; }
-.bg-green-700 { background-color: #2f855a; }
+.bg-gray-800 { background-color: var(--color-gray-800); }
+.bg-blue-600 { background-color: var(--color-blue-600); }
+.bg-blue-700 { background-color: var(--color-blue-700); }
+.bg-green-600 { background-color: var(--color-green-600); }
+.bg-green-700 { background-color: var(--color-green-700); }
 
 .bg-cover { background-size: cover; }
 .bg-center { background-position: center; }
@@ -81,11 +98,11 @@
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
 
-.text-lg { font-size: 1.125rem; color: #2d3748; }
+.text-lg { font-size: 1.125rem; color: var(--color-gray-800); }
 .text-xl { font-size: 1.25rem; }
 .text-2xl { font-size: 1.5rem; }
 .text-3xl { font-size: 1.875rem; }
-.text-4xl { font-size: 2.25rem; color: #ffffff; }
+.text-4xl { font-size: 2.25rem; color: var(--color-white); }
 
 .h-60 { height: 15rem; }
 
@@ -103,20 +120,20 @@
 
 .shadow-md { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
 
-.hover\:text-white:hover { color: #2d3748; }
+.hover\:text-white:hover { color: var(--color-gray-800); }
 .hover\:text-blue-800:hover { color: #2c5282; }
-.hover\:bg-blue-700:hover { background-color: #2b6cb0; }
-.hover\:bg-green-700:hover { background-color: #2f855a; }
+.hover\:bg-blue-700:hover { background-color: var(--color-blue-700); }
+.hover\:bg-green-700:hover { background-color: var(--color-green-700); }
 
 .space-x-4 > *:not(:last-child) { margin-right: 1rem; }
 
-.hover\:bg-blue-700:hover { background-color: #2b6cb0; }
-.hover\:bg-green-700:hover { background-color: #2f855a; }
+.hover\:bg-blue-700:hover { background-color: var(--color-blue-700); }
+.hover\:bg-green-700:hover { background-color: var(--color-green-700); }
 
 .shadow-md { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
 .hover\:text-blue-800:hover { color: #2c5282; }
 
-.hover\:text-white:hover { color: #2d3748; }
+.hover\:text-white:hover { color: var(--color-gray-800); }
 
 .rounded-lg { border-radius: 0.5rem; }
 .max-w-2xl { max-width: 42rem; }
@@ -147,7 +164,7 @@
 button {
     border: none;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color var(--transition-speed), transform 0.2s;
 }
 
 button:focus {
@@ -170,16 +187,24 @@ button:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0,0,0,0.5);
+    transition: opacity var(--transition-speed);
+}
+
+/* Optional: Add a class for active modals */
+.modal.active {
+    display: block;
+    opacity: 1;
 }
 
 .modal-content {
-    background-color: #ffffff;
+    background-color: var(--color-modal-bg);
     margin: 10% auto;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid var(--color-modal-border);
     width: 80%;
     max-width: 500px;
     border-radius: 0.5rem;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .close {
@@ -187,27 +212,54 @@ button:hover {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
 }
 
 .close:hover,
 .close:focus {
-    color: #2d3748;
+    color: var(--color-close-hover);
     text-decoration: none;
     cursor: pointer;
 }
 
 /* Dark Mode */
 body.dark {
-    background-color: #1a202c;
-    color: #f7fafc;
+    background-color: var(--color-gray-800);
+    color: var(--color-white);
 }
 
-body.dark .bg-gray-100 { background-color: #2d3748; }
-body.dark .text-gray-800 { color: #f7fafc; }
-body.dark .bg-gray-800 { background-color: #1a202c; }
-body.dark .text-white { color: #f7fafc; }
-body.dark .bg-blue-600 { background-color: #2b6cb0; }
-body.dark .bg-green-600 { background-color: #2f855a; }
+body.dark .bg-gray-100 { background-color: var(--color-gray-100); }
+body.dark .text-gray-800 { color: var(--color-white); }
+body.dark .bg-gray-800 { background-color: var(--color-gray-800); }
+body.dark .text-white { color: var(--color-white); }
+body.dark .bg-blue-600 { background-color: var(--color-blue-600); }
+body.dark .bg-green-600 { background-color: var(--color-green-600); }
+
+/* Dark Mode for Modal Content */
+body.dark .modal-content {
+    background-color: var(--color-modal-bg); /* Dark background for modals */
+    color: var(--color-white); /* Light text for readability */
+    border: 1px solid var(--color-modal-border); /* Darker border */
+}
+
+body.dark .close {
+    color: var(--color-white);
+}
+
+body.dark .close:hover,
+body.dark .close:focus {
+    color: #cbd5e0;
+}
+
+/* Ensure buttons within modals adapt to dark mode */
+body.dark .modal-content button {
+    background-color: #4a5568; /* Dark button background */
+    color: var(--color-white); /* Light button text */
+}
+
+body.dark .modal-content button:hover {
+    background-color: var(--color-blue-600); /* Darker hover state */
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -234,4 +286,48 @@ body.dark .bg-green-600 { background-color: #2f855a; }
     .modal-content {
         width: 90%;
     }
+
+    table, thead, tbody, th, td, tr { 
+        display: block; 
+    }
+    
+    thead tr {
+        display: none;
+    }
+    
+    tr {
+        margin-bottom: 1rem;
+    }
+    
+    td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+    }
+    
+    td::before {
+        content: attr(data-label);
+        font-weight: bold;
+    }
+}
+
+/* Highlight Selected Components */
+tr.selected {
+    background-color: var(--color-blue-100);
+}
+
+tr.selected td {
+    color: var(--color-blue-700);
+}
+
+/* Focus Styles */
+:focus {
+    outline: 2px solid var(--color-blue-600);
+    outline-offset: 2px;
+}
+
+/* Smooth Transitions for Modals */
+.modal:target {
+    display: block;
+    opacity: 1;
 }
