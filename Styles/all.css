@@ -1,0 +1,16 @@
+/* Header Styles */
+header {
+    background-color: #2d3748;
+    color: #ffffff;
+    padding: 1rem;
+    /* ...existing header styles... */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #2d3748;
+    color: #ffffff;
+    text-align: center;
+    padding: 1rem;
+    /* ...existing footer styles... */
+}

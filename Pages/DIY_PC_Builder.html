@@ -1,56 +1,157 @@
+<!--
+    Hey Bo'oh Wotah!
+
+    Welcome to the DIY PC Builder page. Here's a quick overview to help you understand the structure:
+
+    1. **Header:** Contains the website title and navigation links.
+    2. **Hero Section:** Eye-catching section with a background image and a call-to-action button.
+    3. **Main Content:**
+        - **Pricing Section:** Displays the estimated price and a refresh button.
+        - **Component Picker Table:** Allows users to select various PC components.
+    4. **About Section:** Provides information about the PC Builder tool.
+    5. **Footer:** Contains copyright information and additional links.
+
+    Feel free to explore and modify each section to see how changes affect the webpage. Happy experimenting!
+-->
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="PC_Builder.css">
-    <title>DIY Builder</title>
+    <title>WebCorp</title>
+    <link rel="stylesheet" href="../Styles/PC_Builder.css">
 </head>
-<body>
-    <h1>PC builder</h1>
-    <p>Estimated Price:$</p>
-    <div><a href="">Refresh</a></div>
-    <div class="picker">
-        <table>
-            <tr>
-                <th>CPU</th>
-                <th>Mainboard</th>
-                <th>RAM</th>
-                <th>SSD</th>
-                <th>HDD</th>
-                <th>VGA</th>
-                <th>PSU</th>
-                <th>Case</th>
-                <th>Display</th>
-                <th>Keyboard</th>
-                <th>Mouse</th>
-                <th>Headphone</th>
-                <th>Air Radiator</th>
-                <th>All-in-1 Water Radiator</th>
-                <th>LED Fan</th>
-                <th>Gaming chair</th>
-                <th>Mischellanous</th>
-            </tr>
-            <tr>
-                <td><a href="">Choose CPU</a></a></td>
-                <td><a href="">Choose Mainboard</a></td>
-                <td><a href="">Choose RAM</a></td>
-                <td><a href="">Choose SSD</a></td>
-                <td><a href="">Choose HDD</a></td>
-                <td><a href="">Choose VGA</a></td>
-                <td><a href="">Choose PSU</a></td>
-                <td><a href="">Choose Case</a></td>
-                <td><a href="">Choose Display</a></td>
-                <td><a href="">Choose Keyboard</a></td>
-                <td><a href="">Choose Mouse</a></td>
-                <td><a href="">Choose Headphone</a></td>
-                <td><a href="">Choose Air Radiator</a></td>
-                <td><a href="">Choose All-in-1 Water Radiator</a></td>
-                <td><a href="">Choose LED Fan</a></td>
-                <td><a href="">Choose Gaming chair</a></td>
-                <td><a href="">Choose Mischellanous</a></td>
-            </tr>
-        </table>
-    </div>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-semibold">WebCorp</h1>
+            <nav class="space-x-4">
+                <a href="#build" class="text-gray-300 hover:text-white">Lorem</a>
+                <a href="#about" class="text-gray-300 hover:text-white">Ipsum</a>
+                <a href="#support" class="text-gray-300 hover:text-white">Dolor</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero bg-cover bg-center h-60 flex items-center justify-center text-center text-white px-4" style="background-image: url('https://via.placeholder.com/1500x500');">
+        <div class="space-y-4">
+            <h2 class="text-4xl font-bold">Lorem Ipsum Dolor</h2>
+            <p class="text-lg">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <a href="#build" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Start Building</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto py-8 space-y-8">
+        <!-- Pricing Section -->
+        <section id="build" class="flex justify-between items-center">
+            <h2 class="text-xl font-semibold">Lorem Ipsum: <span id="price">$0</span></h2>
+            <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Refresh</button>
+        </section>
+
+        <!-- Component Picker Table -->
+        <section class="bg-white shadow-md rounded-lg p-6">
+            <h3 class="text-2xl font-semibold mb-4">Select Components</h3>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-blue-600 text-white">
+                        <th class="p-4 text-left">Lorem</th>
+                        <th class="p-4 text-left">Ipsum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="border-b">
+                        <td class="p-4">Lorem</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Lorem</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Mainboard</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Mainboard</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">RAM</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose RAM</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">SSD</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose SSD</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">HDD</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose HDD</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">VGA</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose VGA</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">PSU</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose PSU</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Case</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Case</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Display</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Display</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Keyboard</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Keyboard</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Mouse</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Mouse</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Headphone</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Headphone</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Air Radiator</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Air Radiator</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">All-in-1 Water Radiator</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Water Radiator</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">LED Fan</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose LED Fan</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Gaming Chair</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Gaming Chair</a></td>
+                    </tr>
+                    <tr class="border-b">
+                        <td class="p-4">Miscellaneous</td>
+                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800">Choose Miscellaneous</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <!-- About Section -->
+    <section id="about" class="bg-gray-200 py-8">
+        <div class="container mx-auto text-center space-y-4">
+            <h3 class="text-3xl font-semibold">About Lorem</h3>
+            <p class="text-lg max-w-2xl mx-auto">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <p class="text-sm">&copy; 2024 WebCorp. All rights reserved.</p>
+        <div class="space-x-4">
+            <a href="#support" class="text-gray-400 hover:text-white">Support</a>
+            <a href="#about" class="text-gray-400 hover:text-white">Privacy Policy</a>
+            <a href="#about" class="text-gray-400 hover:text-white">Terms of Service</a>
+        </div>
+    </footer>
 </body>
 </html>
