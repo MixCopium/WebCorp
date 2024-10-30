@@ -51,7 +51,7 @@
 }
 
 .text-gray-100 { color: #f7fafc; }
-.text-gray-300 { color: #d1d5db; }
+.text-gray-300 { color: #1a202c; }
 .text-gray-400 { color: #cbd5e0; }
 .text-gray-800 { color: #1a202c; }
 
@@ -80,11 +80,11 @@
 .font-semibold { font-weight: 600; }
 .font-bold { font-weight: 700; }
 
-.text-lg { font-size: 1.125rem; }
+.text-lg { font-size: 1.125rem; color:#fff; }
 .text-xl { font-size: 1.25rem; }
 .text-2xl { font-size: 1.5rem; }
 .text-3xl { font-size: 1.875rem; }
-.text-4xl { font-size: 2.25rem; }
+.text-4xl { font-size: 2.25rem; color: #fff; }
 
 .h-60 { height: 15rem; }
 
