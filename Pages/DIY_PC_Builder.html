@@ -20,15 +20,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCorp</title>
-    <link rel="stylesheet" href="../Styles/PC_Builder.css">
-    <link rel="stylesheet" href="../Styles/all.css">
+    <!-- Remove local Tailwind and all.css links -->
+    <!-- <link href="../Styles/tailwind.css" rel="stylesheet"> -->
+    <!-- <link rel="stylesheet" href="../Styles/all.css"> -->
+    <!-- Include Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-100">
 
     <!-- Dark Mode Toggle -->
-    <div class="toggle-switch" aria-label="Toggle Dark Mode">
-        <input type="checkbox" id="darkModeToggle" aria-checked="false" aria-label="Toggle Dark Mode">
-        <label for="darkModeToggle" role="switch"></label>
+    <div class="fixed top-4 right-4 flex items-center">
+        <input type="checkbox" id="darkModeToggle" class="hidden" aria-checked="false" aria-label="Toggle Dark Mode">
+        <label for="darkModeToggle" role="switch" class="cursor-pointer w-12 h-6 bg-gray-300 rounded-full relative transition-colors duration-300">
+            <span class="absolute w-5 h-5 bg-white rounded-full top-0.5 left-0.5 transition-transform duration-300 dark:bg-gray-700"></span>
+        </label>
     </div>
 
     <header class="bg-gray-800 text-white p-4">
@@ -60,7 +65,7 @@
         </section>
 
         <!-- Component Picker Table -->
-        <section class="bg-white shadow-md rounded-lg p-6">
+        <section class="bg-white dark:bg-gray-800 shadow-md rounded-lg p-6">
             <h3 class="text-2xl font-semibold mb-4">Select Components</h3>
             <table class="w-full border-collapse" aria-label="Component Picker">
                 <thead>
@@ -74,10 +79,10 @@
                         <td class="p-4" data-label="Component">CPU</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="cpuModal">Choose CPU</button>
-                            <div class="modal" role="dialog" aria-labelledby="cpuModalTitle" id="cpuModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="cpuModalTitle">Select CPU</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="cpuModalTitle" id="cpuModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="cpuModalTitle" class="text-xl font-semibold mb-4">Select CPU</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -87,10 +92,10 @@
                         <td class="p-4" data-label="Component">Mainboard</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="mainboardModal">Choose Mainboard</button>
-                            <div class="modal" role="dialog" aria-labelledby="mainboardModalTitle" id="mainboardModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="mainboardModalTitle">Select Mainboard</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="mainboardModalTitle" id="mainboardModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="mainboardModalTitle" class="text-xl font-semibold mb-4">Select Mainboard</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -100,10 +105,10 @@
                         <td class="p-4" data-label="Component">RAM</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="ramModal">Choose RAM</button>
-                            <div class="modal" role="dialog" aria-labelledby="ramModalTitle" id="ramModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="ramModalTitle">Select RAM</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="ramModalTitle" id="ramModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="ramModalTitle" class="text-xl font-semibold mb-4">Select RAM</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -113,10 +118,10 @@
                         <td class="p-4" data-label="Component">SSD</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="ssdModal">Choose SSD</button>
-                            <div class="modal" role="dialog" aria-labelledby="ssdModalTitle" id="ssdModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="ssdModalTitle">Select SSD</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="ssdModalTitle" id="ssdModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="ssdModalTitle" class="text-xl font-semibold mb-4">Select SSD</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -126,10 +131,10 @@
                         <td class="p-4" data-label="Component">HDD</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="hddModal">Choose HDD</button>
-                            <div class="modal" role="dialog" aria-labelledby="hddModalTitle" id="hddModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="hddModalTitle">Select HDD</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="hddModalTitle" id="hddModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="hddModalTitle" class="text-xl font-semibold mb-4">Select HDD</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -139,10 +144,10 @@
                         <td class="p-4" data-label="Component">VGA</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="vgaModal">Choose VGA</button>
-                            <div class="modal" role="dialog" aria-labelledby="vgaModalTitle" id="vgaModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="vgaModalTitle">Select VGA</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="vgaModalTitle" id="vgaModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="vgaModalTitle" class="text-xl font-semibold mb-4">Select VGA</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -152,10 +157,10 @@
                         <td class="p-4" data-label="Component">PSU</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="psuModal">Choose PSU</button>
-                            <div class="modal" role="dialog" aria-labelledby="psuModalTitle" id="psuModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="psuModalTitle">Select PSU</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="psuModalTitle" id="psuModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="psuModalTitle" class="text-xl font-semibold mb-4">Select PSU</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -165,10 +170,10 @@
                         <td class="p-4" data-label="Component">Case</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="caseModal">Choose Case</button>
-                            <div class="modal" role="dialog" aria-labelledby="caseModalTitle" id="caseModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="caseModalTitle">Select Case</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="caseModalTitle" id="caseModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="caseModalTitle" class="text-xl font-semibold mb-4">Select Case</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -178,10 +183,10 @@
                         <td class="p-4" data-label="Component">Display</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="displayModal">Choose Display</button>
-                            <div class="modal" role="dialog" aria-labelledby="displayModalTitle" id="displayModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="displayModalTitle">Select Display</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="displayModalTitle" id="displayModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="displayModalTitle" class="text-xl font-semibold mb-4">Select Display</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -191,10 +196,10 @@
                         <td class="p-4" data-label="Component">Keyboard</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="keyboardModal">Choose Keyboard</button>
-                            <div class="modal" role="dialog" aria-labelledby="keyboardModalTitle" id="keyboardModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="keyboardModalTitle">Select Keyboard</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="keyboardModalTitle" id="keyboardModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="keyboardModalTitle" class="text-xl font-semibold mb-4">Select Keyboard</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -204,10 +209,10 @@
                         <td class="p-4" data-label="Component">Mouse</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="mouseModal">Choose Mouse</button>
-                            <div class="modal" role="dialog" aria-labelledby="mouseModalTitle" id="mouseModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="mouseModalTitle">Select Mouse</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="mouseModalTitle" id="mouseModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="mouseModalTitle" class="text-xl font-semibold mb-4">Select Mouse</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -217,10 +222,10 @@
                         <td class="p-4" data-label="Component">Headphone</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="headphoneModal">Choose Headphone</button>
-                            <div class="modal" role="dialog" aria-labelledby="headphoneModalTitle" id="headphoneModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="headphoneModalTitle">Select Headphone</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="headphoneModalTitle" id="headphoneModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="headphoneModalTitle" class="text-xl font-semibold mb-4">Select Headphone</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -230,10 +235,10 @@
                         <td class="p-4" data-label="Component">Air Radiator</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="airRadiatorModal">Choose Air Radiator</button>
-                            <div class="modal" role="dialog" aria-labelledby="airRadiatorModalTitle" id="airRadiatorModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="airRadiatorModalTitle">Select Air Radiator</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="airRadiatorModalTitle" id="airRadiatorModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="airRadiatorModalTitle" class="text-xl font-semibold mb-4">Select Air Radiator</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -243,10 +248,10 @@
                         <td class="p-4" data-label="Component">All-in-1 Water Radiator</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="waterRadiatorModal">Choose Water Radiator</button>
-                            <div class="modal" role="dialog" aria-labelledby="waterRadiatorModalTitle" id="waterRadiatorModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="waterRadiatorModalTitle">Select Water Radiator</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="waterRadiatorModalTitle" id="waterRadiatorModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="waterRadiatorModalTitle" class="text-xl font-semibold mb-4">Select Water Radiator</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -256,10 +261,10 @@
                         <td class="p-4" data-label="Component">LED Fan</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="ledFanModal">Choose LED Fan</button>
-                            <div class="modal" role="dialog" aria-labelledby="ledFanModalTitle" id="ledFanModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="ledFanModalTitle">Select LED Fan</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="ledFanModalTitle" id="ledFanModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="ledFanModalTitle" class="text-xl font-semibold mb-4">Select LED Fan</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -269,10 +274,10 @@
                         <td class="p-4" data-label="Component">Gaming Chair</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="gamingChairModal">Choose Gaming Chair</button>
-                            <div class="modal" role="dialog" aria-labelledby="gamingChairModalTitle" id="gamingChairModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="gamingChairModalTitle">Select Gaming Chair</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="gamingChairModalTitle" id="gamingChairModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="gamingChairModalTitle" class="text-xl font-semibold mb-4">Select Gaming Chair</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -282,10 +287,10 @@
                         <td class="p-4" data-label="Component">Miscellaneous</td>
                         <td class="p-4">
                             <button class="open-modal bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded" data-modal="miscellaneousModal">Choose Miscellaneous</button>
-                            <div class="modal" role="dialog" aria-labelledby="miscellaneousModalTitle" id="miscellaneousModalDialog">
-                                <div class="modal-content">
-                                    <button class="close" aria-label="Close">&times;</button>
-                                    <h2 id="miscellaneousModalTitle">Select Miscellaneous</h2>
+                            <div class="modal fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 hidden" role="dialog" aria-labelledby="miscellaneousModalTitle" id="miscellaneousModalDialog">
+                                <div class="modal-content bg-white dark:bg-gray-800 p-6 rounded-lg">
+                                    <button class="close text-gray-600 dark:text-gray-300 text-2xl">&times;</button>
+                                    <h2 id="miscellaneousModalTitle" class="text-xl font-semibold mb-4">Select Miscellaneous</h2>
                                     <!-- Part selection options -->
                                 </div>
                             </div>
@@ -295,6 +300,9 @@
             </table>
         </section>
     </main>
+
+    <!-- Add the refresh button -->
+    <button id="refreshButton" class="fixed bottom-4 right-4 bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded">Refresh</button>
 
     <!-- Footer -->
     <footer class="bg-gray-800 text-white text-center py-4">
@@ -316,15 +324,15 @@
         // Open modals when clicking the "Choose" buttons
         document.querySelectorAll('.open-modal').forEach(button => {
             button.addEventListener('click', () => {
-                const modalId = button.getAttribute('data-modal');
-                document.getElementById(modalId).style.display = 'block';
+                const modalId = button.getAttribute('data-modal') + 'Dialog';
+                document.getElementById(modalId).classList.remove('hidden');
             });
         });
 
         // Close all modals when clicking the close button or outside the modal-content
         document.querySelectorAll('.close').forEach(closeBtn => {
             closeBtn.addEventListener('click', () => {
-                closeBtn.closest('.modal').style.display = 'none';
+                closeBtn.closest('.modal').classList.add('hidden');
             });
         });
 
@@ -332,26 +340,15 @@
             const modals = document.querySelectorAll('.modal');
             modals.forEach(modal => {
                 if (event.target == modal) {
-                    modal.style.display = "none";
+                    modal.classList.add('hidden');
                 }
             });
         }
 
-        // Ensure modals adapt to theme changes
-        const observer = new MutationObserver(() => {
-            const isDark = document.body.classList.contains('dark');
-            document.querySelectorAll('.modal-content').forEach(modalContent => {
-                if (isDark) {
-                    modalContent.style.backgroundColor = '#2d3748';
-                    modalContent.style.color = '#f7fafc';
-                } else {
-                    modalContent.style.backgroundColor = '#ffffff';
-                    modalContent.style.color = '#2d3748';
-                }
-            });
+        // Add the refresh button functionality
+        document.getElementById('refreshButton').addEventListener('click', () => {
+            location.reload();
         });
-
-        observer.observe(document.body, { attributes: true, attributeFilter: ['class'] });
     </script>
 </body>
 </html>
