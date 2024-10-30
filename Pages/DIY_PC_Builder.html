@@ -21,8 +21,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WebCorp</title>
     <link rel="stylesheet" href="../Styles/PC_Builder.css">
+    <link rel="stylesheet" href="../Styles/all.css">
 </head>
 <body class="bg-gray-100 text-gray-800">
+
+    <!-- Dark Mode Toggle -->
+    <div class="toggle-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <label for="darkModeToggle"></label>
+    </div>
 
     <header class="bg-gray-800 text-white p-4">
         <div class="container mx-auto flex justify-between items-center">
@@ -36,7 +43,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero bg-cover bg-center h-60 flex items-center justify-center text-center text-white px-4" style="background-image: url('https://wallpapercave.com/wp/wp4365705.png');">
+    <section class="hero bg-cover bg-center h-60 flex items-center justify-center text-center text-white px-4" style="background-image: url('https://new-banner-url.com/image.png');">
         <div class="space-y-4">
             <h2 class="text-4xl font-bold">PC Builder</h2>
             <p class="text-lg">Build your own PC with the best price on the market!</p>
@@ -65,71 +72,275 @@
                 <tbody>
                     <tr class="border-b">
                         <td class="p-4">CPU</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose CPU</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="cpuModal" class="modal-trigger">
+                            <label for="cpuModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose CPU</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('cpuModal').checked=false">&times;</span>
+                                    <h2>Select CPU</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Mainboard</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Mainboard</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="mainboardModal" class="modal-trigger">
+                            <label for="mainboardModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Mainboard</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('mainboardModal').checked=false">&times;</span>
+                                    <h2>Select Mainboard</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">RAM</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose RAM</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="ramModal" class="modal-trigger">
+                            <label for="ramModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose RAM</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('ramModal').checked=false">&times;</span>
+                                    <h2>Select RAM</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">SSD</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose SSD</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="ssdModal" class="modal-trigger">
+                            <label for="ssdModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose SSD</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('ssdModal').checked=false">&times;</span>
+                                    <h2>Select SSD</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">HDD</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose HDD</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="hddModal" class="modal-trigger">
+                            <label for="hddModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose HDD</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('hddModal').checked=false">&times;</span>
+                                    <h2>Select HDD</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">VGA</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose VGA</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="vgaModal" class="modal-trigger">
+                            <label for="vgaModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose VGA</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('vgaModal').checked=false">&times;</span>
+                                    <h2>Select VGA</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">PSU</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose PSU</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="psuModal" class="modal-trigger">
+                            <label for="psuModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose PSU</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('psuModal').checked=false">&times;</span>
+                                    <h2>Select PSU</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Case</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Case</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="caseModal" class="modal-trigger">
+                            <label for="caseModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Case</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('caseModal').checked=false">&times;</span>
+                                    <h2>Select Case</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Display</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Display</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="displayModal" class="modal-trigger">
+                            <label for="displayModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Display</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('displayModal').checked=false">&times;</span>
+                                    <h2>Select Display</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Keyboard</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Keyboard</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="keyboardModal" class="modal-trigger">
+                            <label for="keyboardModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Keyboard</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('keyboardModal').checked=false">&times;</span>
+                                    <h2>Select Keyboard</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Mouse</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Mouse</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="mouseModal" class="modal-trigger">
+                            <label for="mouseModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Mouse</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('mouseModal').checked=false">&times;</span>
+                                    <h2>Select Mouse</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Headphone</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Headphone</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="headphoneModal" class="modal-trigger">
+                            <label for="headphoneModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Headphone</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('headphoneModal').checked=false">&times;</span>
+                                    <h2>Select Headphone</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Air Radiator</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Air Radiator</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="airRadiatorModal" class="modal-trigger">
+                            <label for="airRadiatorModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Air Radiator</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('airRadiatorModal').checked=false">&times;</span>
+                                    <h2>Select Air Radiator</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">All-in-1 Water Radiator</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Water Radiator</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="waterRadiatorModal" class="modal-trigger">
+                            <label for="waterRadiatorModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Water Radiator</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('waterRadiatorModal').checked=false">&times;</span>
+                                    <h2>Select Water Radiator</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">LED Fan</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose LED Fan</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="ledFanModal" class="modal-trigger">
+                            <label for="ledFanModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose LED Fan</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('ledFanModal').checked=false">&times;</span>
+                                    <h2>Select LED Fan</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Gaming Chair</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Gaming Chair</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="gamingChairModal" class="modal-trigger">
+                            <label for="gamingChairModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Gaming Chair</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('gamingChairModal').checked=false">&times;</span>
+                                    <h2>Select Gaming Chair</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     <tr class="border-b">
                         <td class="p-4">Miscellaneous</td>
-                        <td class="p-4"><a href="#" class="text-blue-600 hover:text-blue-800"><button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Miscellaneous</button></a></td>
+                        <td class="p-4">
+                            <input type="checkbox" id="miscellaneousModal" class="modal-trigger">
+                            <label for="miscellaneousModal" class="text-blue-600 hover:text-blue-800">
+                                <button class="bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded">Choose Miscellaneous</button>
+                            </label>
+                            <div class="modal">
+                                <div class="modal-content">
+                                    <span class="close" onclick="document.getElementById('miscellaneousModal').checked=false">&times;</span>
+                                    <h2>Select Miscellaneous</h2>
+                                    <!-- Part selection options -->
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -153,5 +364,24 @@
             <a href="#about" class="text-gray-400 hover:text-white">Terms of Service</a>
         </div>
     </footer>
+
+    <script>
+        // Toggle Dark Mode
+        const toggle = document.getElementById('darkModeToggle');
+        toggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark', toggle.checked);
+        });
+
+        // Close all modals when clicking outside the modal-content
+        window.onclick = function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                    modal.previousElementSibling.checked = false;
+                }
+            });
+        }
+    </script>
 </body>
 </html>

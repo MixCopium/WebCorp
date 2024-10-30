@@ -14,3 +14,46 @@ footer {
     padding: 1rem;
     /* ...existing footer styles... */
 }
+
+/* Dark Mode Toggle */
+.toggle-switch {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.toggle-switch input {
+    display: none;
+}
+
+.toggle-switch label {
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    background-color: #ccc;
+    border-radius: 25px;
+    position: relative;
+    transition: background-color 0.3s;
+}
+
+.toggle-switch label::after {
+    content: "";
+    position: absolute;
+    width: 21px;
+    height: 21px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+}
+
+.toggle-switch input:checked + label {
+    background-color: #2d3748;
+}
+
+.toggle-switch input:checked + label::after {
+    transform: translateX(25px);
+}
